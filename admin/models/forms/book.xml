@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+        addrulepath="/administrator/components/com_books/models/rules"
+>
+    <fieldset>
+        <field
+                name="id"
+                type="hidden"
+        />
+        <field
+                name="title"
+                type="text"
+                label="COM_BOOKS_BOOKS_TITLE_LABEL"
+                description="COM_BOOKS_BOOKS_TITLE_DESC"
+                size="40"
+                class="inputbox validate-title"
+                validate="title"
+                required="true"
+                default=""
+        />
+    </fieldset>
+</form>
