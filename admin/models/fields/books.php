@@ -27,8 +27,9 @@ class JFormFieldBooks extends JFormFieldList
     {
         $db    = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select('id,title,published');
+        $query->select('*');
         $query->from('#__books');
+        $query->where('published = 1');
         $db->setQuery((string) $query);
         $messages = $db->loadObjectList();
         $options  = array();
@@ -37,7 +38,8 @@ class JFormFieldBooks extends JFormFieldList
         {
         foreach ($messages as $message)
         {
-        $options[] = JHtml::_('select.option', $message->id, $message->greeting);
+            $options[] = JHtml::_('select.option', $message->id, $message->title .
+                ($message->status ? ' (' . $message->status . ')' : ''));
         }
         }
 

@@ -2,7 +2,10 @@
 <form
         addrulepath="/administrator/components/com_books/models/rules"
 >
-    <fieldset>
+    <fieldset
+            name="details"
+            label="COM_BOOKS_BOOKS_DETAILS"
+    >
         <field
                 name="id"
                 type="hidden"
@@ -17,6 +20,96 @@
                 validate="title"
                 required="true"
                 default=""
+        />
+        <field
+                name="author"
+                type="text"
+                label="COM_BOOKS_BOOKS_AUTHOR_LABEL"
+                description="COM_BOOKS_BOOKS_AUTHOR_DESC"
+                size="40"
+                class="inputbox validate-title"
+                validate="title"
+                required="true"
+                default=""
+        />
+        <field
+                name="publisher"
+                type="text"
+                label="COM_BOOKS_BOOKS_PUBLISHER_LABEL"
+                description="COM_BOOKS_BOOKS_PUBLISHER_DESC"
+                size="40"
+                class="inputbox validate-title"
+                validate="title"
+                required="true"
+                default=""
+        />
+        <field
+                name="year"
+                type="number"
+                label="COM_BOOKS_BOOKS_YEAR_LABEL"
+                description="COM_BOOKS_BOOKS_YEAR_DESC"
+                size="40"
+                class="inputbox"
+                min="1900"
+                max="2050"
+                required="true"
+                default=""
+        />
+        <field
+                name="category"
+                type="text"
+                extension="com_books"
+                class="inputbox"
+                default=""
+                label="COM_BOOKS_BOOKS_FIELD_CAT_LABEL"
+                description="COM_BOOKS_BOOKS_FIELD_CAT_DESC"
+                required="true"
+        >
+            <option value="science">science</option>
+            <option value="fantasy">fantasy</option>
+            <option value="crime">crime</option>
+            <option value="sci-fi">sci-fi</option>
+            <option value="dramat">dramat</option>
+        </field>
+        <field
+                name="status"
+                type="text"
+                extension="com_books"
+                class="inputbox"
+                default=""
+                label="COM_BOOKS_BOOKS_FIELD_STATUS_LABEL"
+                description="COM_BOOKS_BOOKS_FIELD_STATUS_DESC"
+                required="true"
+        >
+            <option value="free">FREE</option>
+            <option value="rent">RENT</option>
+        </field>
+    </fieldset>
+    <fields name="params">
+        <fieldset
+                name="params"
+                label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS"
+        >
+        </fieldset>
+    </fields>
+    <fieldset
+            name="accesscontrol"
+            label="COM_BOOKS_FIELDSET_RULES"
+    >
+        <field
+                name="asset_id"
+                type="hidden"
+                filter="unset"
+        />
+        <field
+                name="rules"
+                type="rules"
+                label="COM_BOOKS_FIELD_RULES_LABEL"
+                filter="rules"
+                validate="rules"
+                class="inputbox"
+                component="com_books"
+                section="message"
         />
     </fieldset>
 </form>

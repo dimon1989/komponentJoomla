@@ -48,6 +48,7 @@ class BooksModelBook extends JModelAdmin
             )
             );
 
+
             if (empty($form))
             {
             return false;
@@ -63,7 +64,7 @@ class BooksModelBook extends JModelAdmin
      */
     public function getScript()
     {
-        return 'administrator/components/com_books/models/forms/helloworld.js';
+        return 'administrator/components/com_books/models/forms/book.js';
     }
     /**
 
@@ -85,9 +86,20 @@ class BooksModelBook extends JModelAdmin
 
             if (empty($data))
             {
-            $data = $this->getItem();
+                $data = $this->getItem();
             }
 
             return $data;
+        }
+
+        /**
+         * Method to check if it's OK to delete a message. Overrides JModelAdmin::canDelete
+         */
+        protected function canDelete($record)
+        {
+            if( !empty( $record->id ) )
+            {
+                return JFactory::getUser()->authorise( "core.delete", "com_books.book." . $record->id );
+            }
         }
 }

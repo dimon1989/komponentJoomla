@@ -30,13 +30,17 @@ class BooksViewBooks extends JViewLegacy
         $this->filterForm       = $this->get('FilterForm');
         $this->activeFilters    = $this->get('ActiveFilters');
 
+        // What Access Permissions does this user have? What can (s)he do?
+        $this->canDo = JHelperContent::getActions('com_books');
+
         // Check for errors.
         if (count($errors = $this->get('Errors')))
         {
-            JError::raiseError(500, implode('<br />', $errors));
-
-            return false;
+            throw new Exception(implode("\n", $errors), 500);
         }
+
+        // Set the submenu
+		BooksHelper::addSubmenu('books');
 
         // Set the toolbar
         $this->addToolBar();
@@ -58,9 +62,23 @@ class BooksViewBooks extends JViewLegacy
         }
 
         JToolbarHelper::title($title, 'books');
-        JToolbarHelper::addNew('book.add');
-        JToolbarHelper::editList('book.edit');
-        JToolbarHelper::deleteList('', 'books.delete');
+        if ($this->canDo->get('core.create'))
+        {
+            JToolbarHelper::addNew('book.add');
+        }
+        if ($this->canDo->get('core.edit'))
+        {
+            JToolbarHelper::editList('book.edit');
+        }
+        if ($this->canDo->get('core.delete'))
+        {
+            JToolbarHelper::deleteList('Are you sure you want to delete items?', 'books.delete');
+        }
+        if ($this->canDo->get('core.admin'))
+        {
+            JToolBarHelper::divider();
+            JToolBarHelper::preferences('com_books');
+        }
     }
 
         /**

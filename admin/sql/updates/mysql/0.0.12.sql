@@ -1,0 +1,1 @@
+ALTER TABLE `#__books` ADD `params` VARCHAR(1024) NOT NULL DEFAULT '';

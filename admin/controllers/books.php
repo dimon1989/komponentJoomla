@@ -22,4 +22,5 @@ class BooksControllerBooks extends JControllerAdmin
 
         return $model;
     }
+
 }

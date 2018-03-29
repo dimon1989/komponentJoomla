@@ -15,6 +15,10 @@ $listOrder     = $this->escape($this->filter_order);
 $listDirn      = $this->escape($this->filter_order_Dir);
 ?>
 <form action="index.php?option=com_books&view=books" method="post" id="adminForm" name="adminForm">
+    <div id="j-sidebar-container" class="span2">
+        <?php echo JHtmlSidebar::render(); ?>
+    </div>
+    <div id="j-main-container" class="span10">
     <div class="row-fluid">
         <div class="span6">
             <?php echo JText::_('COM_BOOKS_BOOKS_FILTER'); ?>
@@ -33,8 +37,20 @@ $listDirn      = $this->escape($this->filter_order_Dir);
             <th width="2%">
                 <?php echo JHtml::_('grid.checkall'); ?>
             </th>
-            <th width="82%">
+            <th width="28%">
                 <?php echo JHtml::_('grid.sort', 'COM_BOOKS_BOOKS_TITLE', 'title', $listDirn, $listOrder); ?>
+            </th>
+            <th width="16%">
+                <?php echo JText::_('COM_BOOKS_BOOKS_AUTHOR');  ?>
+            </th>
+            <th width="16%">
+                <?php echo JText::_('COM_BOOKS_BOOKS_PUBLISHER'); ?>
+            </th>
+            <th width="16%">
+                <?php echo JText::_('COM_BOOKS_BOOKS_YEAR'); ?>
+            </th>
+            <th width="16%">
+                <?php echo JText::_('COM_BOOKS_BOOKS_CAT'); ?>
             </th>
             <th width="10%">
                 <?php echo JHtml::_('grid.sort', 'COM_BOOKS_PUBLISHED', 'published', $listDirn, $listOrder); ?>
@@ -67,6 +83,22 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                     <td>
                         <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_BOOKS_EDIT_BOOKS'); ?>">
                         <?php echo $row->title; ?>
+                        </a>
+                        <div class="small">
+                            <?php echo 'Status: '.$this->escape($row->status); ?>
+                        </div>
+                    </td>
+                    <td align="center">
+                        <?php echo $row->author; ?>
+                    </td>
+                    <td align="center">
+                        <?php echo $row->publisher; ?>
+                    </td>
+                    <td align="center">
+                        <?php echo $row->year; ?>
+                    </td>
+                    <td align="center">
+                        <?php echo $row->category; ?>
                     </td>
                     <td align="center">
                         <?php echo JHtml::_('jgrid.published', $row->published, $i, 'books.', true, 'cb'); ?>
@@ -84,4 +116,5 @@ $listDirn      = $this->escape($this->filter_order_Dir);
     <input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>"/>
     <input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>"
     <?php echo JHtml::_('form.token'); ?>
+    </div>
 </form>

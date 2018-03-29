@@ -10,6 +10,15 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
+// Access check: is this user allowed to access the backend of this component?
+if (!JFactory::getUser()->authorise('core.manage', 'com_books'))
+{
+    throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'));
+}
+
+// Require helper file
+JLoader::register('BooksHelper', JPATH_COMPONENT . '/helpers/books.php');
+
 $controller = JControllerLegacy::getInstance('Books');
 
 // Perform the Request task

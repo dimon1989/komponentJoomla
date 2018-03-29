@@ -12,6 +12,7 @@ CREATE TABLE `#__books` (
 	`createDate` DATETIME DEFAULT CURRENT_TIMESTAMP,
 	`rentDate` DATETIME DEFAULT NULL,
 	`published` tinyint(4) NOT NULL DEFAULT '1',
+	`params`   VARCHAR(1024) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`)
 )
 	ENGINE =MyISAM

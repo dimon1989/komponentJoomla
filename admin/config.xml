@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
     <fieldset
+            name="title"
+            label="COM_BOOKS_CONFIG_TITLE_SETTINGS_LABEL"
+            description="COM_BOOKS_CONFIG_TITLE_SETTINGS_DESC"
+    >
+    </fieldset>
+    <fieldset
             name="permissions"
             label="JCONFIG_PERMISSIONS_LABEL"
             description="JCONFIG_PERMISSIONS_DESC"
