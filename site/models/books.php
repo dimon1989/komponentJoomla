@@ -76,12 +76,14 @@ class BooksModelBooks extends JModelItem
         $app->redirect(JURI::base().'index.php?option=com_books&view=books', $message, $messageType);
     }
 
-    public function rentBook($bookId){
+    public function rentBook($bookId, $user_id){
 
         $app = JFactory::getApplication();
         $object = new stdClass();
 
         $object->id = $bookId;
+        $object->user_id = $user_id;
+        $object->rentDate = date('Y-m-d h:i:s', time());;
         $object->status = 'rent';
 
         $result = JFactory::getDbo()->updateObject('#__books', $object, 'id');

@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS `#__books`;
 
 CREATE TABLE `#__books` (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
+	`user_id` INT(11) NOT NULL DEFAULT 'NULL',
 	`asset_id` INT(10)     NOT NULL DEFAULT '0',
 	`title` VARCHAR(25) NOT NULL,
 	`author` VARCHAR(25) NOT NULL,

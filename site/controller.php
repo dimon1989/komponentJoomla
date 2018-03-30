@@ -37,6 +37,7 @@ class BooksController extends JControllerLegacy
 
         $jinput = JFactory::getApplication()->input;
         $bookId = $jinput->post->get('id', null);
+        $user_id = $jinput->post->get('user_id', null);
 
 
         $model = JModelLegacy::getInstance('Books', 'BooksModel', array('ignore_request' => true));

@@ -37,20 +37,26 @@ $listDirn      = $this->escape($this->filter_order_Dir);
             <th width="2%">
                 <?php echo JHtml::_('grid.checkall'); ?>
             </th>
-            <th width="28%">
+            <th width="22%">
                 <?php echo JHtml::_('grid.sort', 'COM_BOOKS_BOOKS_TITLE', 'title', $listDirn, $listOrder); ?>
             </th>
-            <th width="16%">
+            <th width="14%">
                 <?php echo JText::_('COM_BOOKS_BOOKS_AUTHOR');  ?>
             </th>
-            <th width="16%">
+            <th width="14%">
                 <?php echo JText::_('COM_BOOKS_BOOKS_PUBLISHER'); ?>
             </th>
-            <th width="16%">
+            <th width="10%">
                 <?php echo JText::_('COM_BOOKS_BOOKS_YEAR'); ?>
             </th>
-            <th width="16%">
+            <th width="14%">
                 <?php echo JText::_('COM_BOOKS_BOOKS_CAT'); ?>
+            </th>
+            <th width="10%">
+                <?php echo JText::_('COM_BOOKS_BOOKS_STATUS'); ?>
+            </th>
+            <th width="8%">
+                <?php echo JText::_('COM_BOOKS_BOOKS_USER_ID'); ?>
             </th>
             <th width="10%">
                 <?php echo JHtml::_('grid.sort', 'COM_BOOKS_PUBLISHED', 'published', $listDirn, $listOrder); ?>
@@ -99,6 +105,12 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                     </td>
                     <td align="center">
                         <?php echo $row->category; ?>
+                    </td>
+                    <td align="center">
+                        <?php echo $row->status; ?>
+                    </td>
+                    <td align="center">
+                        <?php echo $row->user_id; ?>
                     </td>
                     <td align="center">
                         <?php echo JHtml::_('jgrid.published', $row->published, $i, 'books.', true, 'cb'); ?>
