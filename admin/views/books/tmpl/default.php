@@ -68,7 +68,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
         </thead>
         <tfoot>
         <tr>
-            <td colspan="5">
+            <td colspan="11">
                 <?php echo $this->pagination->getListFooter(); ?>
             </td>
         </tr>
@@ -127,6 +127,6 @@ $listDirn      = $this->escape($this->filter_order_Dir);
     <input type="hidden" name="boxchecked" value="0"/>
     <input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>"/>
     <input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>"
-    <?php echo JHtml::_('form.token'); ?>
+    <?php echo JHtml::_( 'form.token' ); ?>
     </div>
 </form>
