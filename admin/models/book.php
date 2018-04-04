@@ -102,4 +102,5 @@ class BooksModelBook extends JModelAdmin
                 return JFactory::getUser()->authorise( "core.delete", "com_books.book." . $record->id );
             }
         }
+
 }

@@ -42,6 +42,10 @@ class BooksViewBook extends JViewLegacy
             throw new Exception(implode("\n", $errors), 500);
         }
 
+        //check status of edit book
+        if ($this->form->getData()->get('status') == 'free') {
+            $this->form->setFieldAttribute('user_id','type','text');
+        }
 
         // Set the toolbar
         $this->addToolBar();

@@ -1,0 +1,6 @@
+Backend
+-przy usuwaniu wypozyczenia ksiazki wymazac date wypozyczenia
+-przy wypozyczeniu ksiazki dodac date wypozyczenia do bazy
+Frontend
+-dodac input select dla kategorii
+-dodac assets przy dodawaniu ksiazki

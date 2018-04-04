@@ -110,7 +110,7 @@ $listDirn      = $this->escape($this->filter_order_Dir);
                         <?php echo $row->status; ?>
                     </td>
                     <td align="center">
-                        <?php echo $row->user_id; ?>
+                        <?php if ($row->user_id != 0) echo $row->user_id; ?>
                     </td>
                     <td align="center">
                         <?php echo JHtml::_('jgrid.published', $row->published, $i, 'books.', true, 'cb'); ?>

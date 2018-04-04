@@ -57,7 +57,7 @@
         />
         <field
                 name="category"
-                type="text"
+                type="list"
                 extension="com_books"
                 class="inputbox"
                 default=""
@@ -68,12 +68,12 @@
             <option value="science">science</option>
             <option value="fantasy">fantasy</option>
             <option value="crime">crime</option>
-            <option value="sci-fi">sci-fi</option>
+            <option value="science-fiction">science-fiction</option>
             <option value="dramat">dramat</option>
         </field>
         <field
                 name="status"
-                type="text"
+                type="list"
                 extension="com_books"
                 class="inputbox"
                 default=""
@@ -84,6 +84,12 @@
             <option value="free">FREE</option>
             <option value="rent">RENT</option>
         </field>
+        <field
+                name="user_id"
+                type="hidden"
+                class="inputbox"
+                default=""
+        />
     </fieldset>
     <fields name="params">
         <fieldset

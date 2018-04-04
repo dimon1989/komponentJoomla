@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS `#__books`;
 
 CREATE TABLE `#__books` (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
-	`user_id` INT(11) NOT NULL DEFAULT 'NULL',
+	`user_id` INT(11) NOT NULL DEFAULT '0',
 	`asset_id` INT(10)     NOT NULL DEFAULT '0',
 	`title` VARCHAR(25) NOT NULL,
 	`author` VARCHAR(25) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE `#__books` (
 	`status` VARCHAR(25) NOT NULL DEFAULT 'free',
 	`createDate` DATETIME DEFAULT CURRENT_TIMESTAMP,
 	`rentDate` DATETIME DEFAULT NULL,
-	`published` tinyint(4) NOT NULL DEFAULT '1',
+	`published` tinyint(4) NOT NULL DEFAULT '0',
 	`params`   VARCHAR(1024) NOT NULL DEFAULT '',
 	PRIMARY KEY (`id`)
 )
