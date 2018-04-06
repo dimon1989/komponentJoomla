@@ -1,6 +1,7 @@
 Backend
--przy usuwaniu wypozyczenia ksiazki wymazac date wypozyczenia
--przy wypozyczeniu ksiazki dodac date wypozyczenia do bazy
+
+-walidacja wszystkich inputow przy dodawaniu i edycji ksiazki
 Frontend
 -dodac input select dla kategorii
 -dodac assets przy dodawaniu ksiazki
+-ulryc wypozycz dla nie zalogowanych

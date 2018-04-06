@@ -65,6 +65,7 @@
                 description="COM_BOOKS_BOOKS_FIELD_CAT_DESC"
                 required="true"
         >
+            <option value="choose">-- choose --</option>
             <option value="science">science</option>
             <option value="fantasy">fantasy</option>
             <option value="crime">crime</option>
@@ -85,10 +86,21 @@
             <option value="rent">RENT</option>
         </field>
         <field
-                name="user_id"
+                name="rentDate"
                 type="hidden"
                 class="inputbox"
                 default=""
+        >
+        </field>
+        <field
+                name="user_id"
+                type="hidden"
+                class="inputbox"
+                size="40"
+                label="COM_BOOKS_BOOKS_FIELD_USER_ID_LABEL"
+                description="COM_BOOKS_BOOKS_FIELD_USER_ID_DESC"
+                min="100"
+                max="10000"
         />
     </fieldset>
     <fields name="params">

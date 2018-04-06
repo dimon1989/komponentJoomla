@@ -29,6 +29,7 @@ class BooksModelBooks extends JModelItem
 
         $query->select($db->quoteName(array('id', 'title', 'author', 'publisher', 'category','year', 'status', 'createDate', 'rentDate')));
         $query->from($db->quoteName('#__books'));
+        $query->where($db->quoteName('published') . ' = 1' );
 
         $db->setQuery($query);
         $books = $db->loadObjectList();

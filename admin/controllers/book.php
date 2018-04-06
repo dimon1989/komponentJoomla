@@ -54,6 +54,20 @@ class BooksControllerBook extends JControllerForm
         $data  = $this->input->post->get('jform', array(), 'array');
         if ( $data['status'] == 'free' ) {
             $data['user_id'] = '';
+            $data['rentDate'] = '';
+        }
+
+        else if ( $data['status'] == 'rent' && $data['user_id'] != '0') {
+            $data['rentDate'] = date('Y-m-d H:i:s');
+        }
+        else if( $data['status'] == 'rent' && $data['user_id'] == '0'){
+
+            // Redirect back to the edit screen.
+            JFactory::getApplication()->redirect(
+                JRoute::_(
+                    'index.php?option=' . $this->option . '&view=' . $this->view_item
+                    . $this->getRedirectToItemAppend($recordId, $urlVar) . '&id=' . $data['id'], false
+                ),$msg='Incorrect User ID',$msgType='error');
         }
 
         $checkin = property_exists($table, 'checked_out');

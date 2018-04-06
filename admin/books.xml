@@ -44,10 +44,6 @@
         <folder>assets</folder>
     </files>
 
-    <languages folder="site/language">
-        <language tag="en-GB">en-GB/en-GB.com_books.ini</language>
-    </languages>
-
     <administration>
         <!-- Administration Menu Section -->
         <menu link='index.php?option=com_books'>COM_BOOKS_MENU</menu>
